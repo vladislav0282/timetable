@@ -1,0 +1,164 @@
+<div class="container">
+  <div class="max-w-80 m-4">
+    <span class="font-bold">Расписание пригородного и </span><br />
+    <span class="font-bold">междугороднего транспорта</span>
+    <div class="container_input">
+      <div class="m-2">
+        <input
+          class="container_input_from"
+          type="text"
+          [(ngModel)]="firstInputValue"
+          placeholder="Откуда"
+          (change)="fromHandler($event)"
+        />
+        <input
+          type="text"
+          placeholder="Куда"
+          [(ngModel)]="secondInputValue"
+          (change)="toHandler($event)"
+        />
+      </div>
+      <div class="container_input_div">
+        <button
+          class="container_input_button"
+          type="button"
+          (click)="swapValues()"
+        >
+          <p>🠕🠗</p>
+        </button>
+      </div>
+    </div>
+    <div class="container_date">
+      <button
+        class="container_date_btntoday"
+        type="button"
+        (click)="getCurrentDate()"
+      >
+        Сегодня
+      </button>
+      <button
+        class="container_date_btntomorow"
+        type="button"
+        (click)="instTummorowDate()"
+      >
+        Завтра
+      </button>
+      <input
+        required=""
+        type="text"
+        class="container_date_btndate"
+        placeholder="Дата"
+        onfocus="(this.type='date'); this.style.fontSize = '14px';"
+        onfocusout="(this.type='text'); this.style.fontSize = '16px';"
+        [(ngModel)]="installDate"
+        (change)="dateHandler($event)"
+      />
+    </div>
+    <div class="container_traffic">
+      <div>
+        <button
+          class="container_traffic_other"
+          type="button"
+          (click)="otherTranspHandler()"
+        >
+          Любой
+        </button>
+      </div>
+
+      <div class="container_traffic_btnimg">
+        <button
+          class="flex justify-center"
+          type="button"
+          (click)="planeHandler()"
+        >
+          <img
+            class="container_traffic_btnimg_aircraft"
+            src="../assets/aircraft.svg"
+            alt="aircraft"
+          />
+        </button>
+
+        <button
+          class="flex justify-center"
+          type="button"
+          (click)="trainHandler()"
+        >
+          <img
+            class="container_traffic_btnimg_aircraft"
+            src="../assets/train.svg"
+            alt="aircraft"
+          />
+        </button>
+
+        <button
+          class="flex justify-center p-1"
+          type="button"
+          (click)="subwayHandler()"
+        >
+          <img
+            class="container_traffic_btnimg_aircraft"
+            src="../assets/subway.svg"
+            alt="aircraft"
+          />
+        </button>
+        <button
+          class="flex justify-center p-1"
+          type="button"
+          (click)="autoHandler()"
+        >
+          <img
+            class="container_traffic_btnimg_aircraft"
+            src="../assets/bus.svg"
+            alt="aircraft"
+          />
+        </button>
+      </div>
+    </div>
+    <button class="container_btn_find" type="button" (click)="findHandler()">
+      Найти
+    </button>
+    <ng-container *ngIf="result.length > 0">
+      <div>
+        <div class="text-center mb-2">Результаты поиска</div>
+        <table>
+          <thead>
+            <!-- <tr>
+              <th>Рейс</th>
+              <th>Дата и время отправления</th>
+              <th>Время в пути</th>
+              <th>Дата и время прибытия</th>
+            </tr> -->
+          </thead>
+          <tbody>
+            <tr *ngFor="let num of result">
+              <td>
+                <div>
+                  {{ num.thread.number }}{{ " " }}{{ num.thread.title }}
+                </div>
+              </td>
+              <td>
+                <div>
+                  {{ num.departure | date : "dd MMM HH:mm" }}<br />{{
+                    num.from.title
+                  }}<br />{{ num.departure_terminal }}
+                </div>
+              </td>
+              <td>
+                <div class="time_duration">
+                  {{ calculateDuration(num.arrival, num.departure) }}
+                </div>
+              </td>
+              <td>
+                <div>
+                  {{ num.arrival | date : "dd MMM HH:mm" }}<br />{{
+                    num.to.title
+                  }}<br />{{ num.arrival_termina }}
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-container>
+  </div>
+</div>

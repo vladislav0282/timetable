@@ -1,0 +1,170 @@
+.container_input {
+  border: 1px solid gray;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+}
+
+input {
+  outline: none;
+}
+
+.container_input_div {
+  width: 60px;
+}
+
+.container_input_div p {
+  font-size: 30px;
+}
+
+.container_input input {
+  width: 100%;
+}
+
+.container_input_from {
+  border-bottom: 1px solid gray;
+}
+
+.container_input_button {
+  height: 100%;
+}
+
+.container_date {
+  margin-top: 10px;
+}
+
+.container_date {
+  display: flex;
+}
+
+.container_date_btntoday {
+  width: calc(100% / 3);
+  border: 1px solid gray;
+  height: 40px;
+  border-radius: 4px 0 0 4px;
+}
+
+.container_date_btntoday:active {
+  background-color: gray;
+  color: #fff;
+}
+
+.container_date_btntoday:focus {
+  background-color: gray;
+  color: #fff;
+}
+
+.container_date_btntomorow {
+  width: calc(100% / 3);
+  border: 1px solid gray;
+  height: 40px;
+}
+
+.container_date_btntomorow:active {
+  background-color: gray;
+  color: #fff;
+}
+
+.container_date_btntomorow:focus {
+  background-color: gray;
+  color: #fff;
+}
+
+.container_date_btndate {
+  border: 1px solid gray;
+  width: calc(100% / 3);
+  text-align: center;
+  outline: none;
+  height: 40px;
+  border-radius: 0 4px 4px 0;
+}
+
+.container_date_btndate::placeholder {
+  color: black;
+}
+
+.container_traffic {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.container_traffic button {
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.container_traffic_other {
+  padding: 0 8px 0 8px;
+}
+
+.container_traffic_btnimg {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.container_traffic_btnimg button {
+  width: 100%;
+}
+
+.container_traffic_other:active {
+  background-color: gray;
+  color: #fff;
+}
+
+.container_traffic_other:focus {
+  background-color: gray;
+  color: #fff;
+}
+
+.container_traffic_btnimg button:active {
+  background-color: gray;
+  color: #fff;
+}
+
+.container_traffic_btnimg button:focus {
+  background-color: gray;
+  color: #fff;
+}
+
+.container_traffic_btnimg_aircraft {
+  background-size: cover;
+  height: 100%;
+}
+
+.container_btn_find {
+  margin-top: 10px;
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  width: 100%;
+  background-color: gold;
+}
+
+th {
+  padding: 0 4px 0 4px;
+  font-size: 14px;
+}
+
+td {
+  height: 40px;
+
+  font-size: 10px;
+  padding: 0 4px 0 4px;
+  // display: flex;
+  // flex-direction: column;
+}
+
+td:nth-child(2),
+td:nth-child(3),
+td:nth-child(4) {
+  text-align: center;
+}
+
+td div {
+  margin: 0 0 4px 0;
+}
